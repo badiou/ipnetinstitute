@@ -8,5 +8,4 @@
 ### 4- Utiliser la documentation suivante https://pypi.org/project/python-dotenv/ pour créer les variables d'environnement suivantes dans le fichier .env:
     FLASK_APP=app.py
     FLASK_ENV=development
-    motdepasse (qui est le mot de passe de la base de données)
-
+    motdepasse="YOUR_DATABASE_PASSWORD"

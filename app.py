@@ -66,7 +66,7 @@ def creation_filiere():
 def une_filiere(id_filiere):
     filiere=Filiere.query.get(id_filiere)
     if request.method=='GET':
-        return render_template('edit.html',data=filiere)
+        return render_template('edit-filiere.html',data=filiere)
     elif request.method=='POST':
         filiere.libellefiliere=request.form.get('libellefiliere')
         db.session.commit()

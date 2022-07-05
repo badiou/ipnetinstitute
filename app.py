@@ -43,11 +43,14 @@ class Filiere(db.Model):
 
 
 db.create_all()
+@app.route('/')
+def page_accueil():
+    return render_template('index.html')
 
 @app.route('/filieres') #1
 def liste_filieres():
     filieres=Filiere.query.all() #2 #3
-    return render_template('index.html',data=filieres) #4
+    return render_template('filieres.html',data=filieres) #4
 
 @app.route('/add_filiere',methods=['POST','GET'])
 def creation_filiere():
@@ -75,7 +78,7 @@ def une_filiere(id_filiere):
 @app.route('/etudiants') #1
 def liste_etudiants():
     etudiants=Etudiant.query.join(Filiere,Filiere.id==Etudiant.filiere_id).all() #2 #3   
-    return render_template('etudiant.html',data=etudiants) #4  
+    return render_template('etudiants.html',data=etudiants) #4  
 
 
 @app.route('/add_etudiant',methods=['POST','GET'])
